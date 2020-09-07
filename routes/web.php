@@ -13,6 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Auth::routes();
+
+Route::get('push', function () {
+   return view('push-notif');
 });
+
+Route::get('test', function () {
+   event(new App\Events\PushNotification('Someone'));
+   return "Event has been sent!";
+});
+
+Route::get('/', 'ChatsController@index');
+Route::get('messages', 'ChatsController@fetchMessages');
+Route::post('messages', 'ChatsController@sendMessage');
+
+Route::get('/home', 'HomeController@index')->name('home');
