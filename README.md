@@ -32,6 +32,10 @@ npm run install && npm run dev
 ```
 php artisan migrate
 ```
+- open
+```
+https://laravel-realtime-chat-pusher.herokuapp.com/routes
+```
 
 ## About Laravel
 
